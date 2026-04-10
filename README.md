@@ -26,6 +26,10 @@ On activation, the plugin registers itself in the `vivgb_data` WordPress option.
 - CSS/JS must be injected via `wp_footer` in normal WP context (not in AJAX response)
 - The `VIVGB_ON_PAGE` constant signals that a ViV grid is present on the page
 
+## Live Demo
+
+[https://p1glossary.wpenginepowered.com/resources-grid/](https://p1glossary.wpenginepowered.com/resources-grid/) — Resources Grid uses custom HTML facets in the sidebar.
+
 ## Related issues
 
 - [wp-grid-viv-addon#35](https://github.com/vivwebsolutions/wp-grid-viv-addon/issues/35) — Plugin fork initiative
