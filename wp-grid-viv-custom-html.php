@@ -22,6 +22,13 @@ foreach ( glob( WPGB_VCH_PATH . '/lib/*.php' ) as $filename ) {
 	include_once $filename;
 }
 
+// Viv-docs#94 — load textdomain at init (WP 6.7+ requirement). Without this,
+// __() inside the wp_grid_builder/facets filter callback triggers just-in-time
+// autoload which fires before init and throws a notice.
+add_action( 'init', function () {
+	load_plugin_textdomain( 'wp-grid-viv-custom-html', false, dirname( plugin_basename( WPGB_VCH_FILE ) ) . '/languages' );
+} );
+
 register_activation_hook( __FILE__, function () {
 	$vivgb_data = get_option( 'vivgb_data', [] );
 	if ( ! is_array( $vivgb_data ) ) {
