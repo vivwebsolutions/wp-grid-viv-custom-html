@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom HTML facet class — loaded by vivgb_check_plugins() in SHORTINIT AJAX context.
+ * Custom HTML facet class.
  */
 class ViV_Custom_Html_Class {
 

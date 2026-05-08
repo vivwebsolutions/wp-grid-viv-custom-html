@@ -17,12 +17,11 @@ Adds a Custom HTML facet type to WP Grid Builder. Inject arbitrary HTML into the
 
 ## How it works
 
-On activation, the plugin registers itself in the `vivgb_data` WordPress option. The ViV Addon's `vivgb_check_plugins()` function loads the plugin's `lib/register-facet.php` in the SHORTINIT AJAX context, enabling the feature in grid AJAX responses.
+On activation, the plugin registers itself in the `vivgb_data` WordPress option. The facet type is registered with WP Grid Builder via the `wp_grid_builder/facets` filter.
 
 ## Development notes for future agents
 
 - The plugin follows the standard ViV plugin pattern (see wp-grid-viv-facet-tooltips as reference)
-- `lib/register-facet.php` runs under SHORTINIT — standard WP functions are NOT available
 - CSS/JS must be injected via `wp_footer` in normal WP context (not in AJAX response)
 - The `VIVGB_ON_PAGE` constant signals that a ViV grid is present on the page
 
@@ -30,6 +29,3 @@ On activation, the plugin registers itself in the `vivgb_data` WordPress option.
 
 [https://p1glossary.wpenginepowered.com/resources-grid/](https://p1glossary.wpenginepowered.com/resources-grid/) — Resources Grid uses custom HTML facets in the sidebar.
 
-## Related issues
-
-- [wp-grid-viv-addon#35](https://github.com/vivwebsolutions/wp-grid-viv-addon/issues/35) — Plugin fork initiative
