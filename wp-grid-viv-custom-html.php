@@ -8,10 +8,17 @@
  * Author:            ViVwebsolutions
  * Author URI:        https://vivwebsolutions.com/
  * Text Domain:       wp-grid-viv-custom-html
- * Requires Plugins:  wp-grid-builder, wp-grid-viv-addon
 */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
+if ( ! is_plugin_active( 'wp-grid-builder/wp-grid-builder.php' ) ) { 
+	add_action( 'admin_notices', function () {
+		echo '<div class="notice notice-error"><p>'; 
+			echo __('My Plugin requires WP Grid Builder.', 'wp-grid-viv-custom-html'); 
+		echo '</p></div>';
+		});
+	return; 
 }
 
 define( 'WPGB_VCH_FILE', __FILE__ );
